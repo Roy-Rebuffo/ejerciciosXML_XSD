@@ -1,0 +1,10 @@
+<libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="ej_4_XSD.xsd">
+  <titulo>1984</titulo>
+  <fecha-publicacion>1949-06-08</fecha-publicacion>
+  <precio>14.99</precio>
+  <disponible>false</disponible>
+  <fecha-ingreso>2023-01-10</fecha-ingreso>
+  <tipo>Libro</tipo>
+  <ejemplares>3</ejemplares>
+</libro>

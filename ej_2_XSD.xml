@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<productos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ej_2_XSD.xsd">
+    <tipo>electronico</tipo>
+    <garantia_anios>2</garantia_anios>
+</productos>
