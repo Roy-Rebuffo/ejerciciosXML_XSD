@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<productos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ej_9_XSD.xsd">
+    <producto>
+        <categoria_producto>Electrónica</categoria_producto>
+    </producto>
+    <producto>
+        <categoria_producto>Ropa</categoria_producto>
+    </producto>
+    <producto>
+        <categoria_producto>Libros</categoria_producto>
+    </producto>
+    <producto>
+        <categoria_producto>Hogar</categoria_producto>
+    </producto>
+</productos>
