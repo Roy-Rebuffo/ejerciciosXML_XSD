@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<respuestas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ej_12_XSD.xsd">
+    <respuesta>A</respuesta>
+    <respuesta>B</respuesta>
+    <respuesta>C</respuesta>
+    <respuesta>D</respuesta>
+</respuestas> 

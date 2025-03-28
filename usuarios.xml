@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<usuarios xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="usuarios.xsd">
+    <usuario>
+        <nombre>Juan Pérez</nombre>
+        <email>juan.perez@example.com</email>
+        <fecha_registro>2024-03-21</fecha_registro>
+        <edad>18</edad>
+        <contrasena>Abc12345</contrasena>
+        <telefono>+34-123-456-789</telefono>
+    </usuario>
+</usuarios>

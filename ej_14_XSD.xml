@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inventario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ej_14_XSD.xsd">
+    <codigo_inventario>abcd1234</codigo_inventario>
+</inventario>
