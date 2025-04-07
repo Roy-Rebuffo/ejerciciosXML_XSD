@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<zonas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ej_20_XSD.xsd">  
+  <ubicacion metros="50">norte</ubicacion> 
+  <ubicacion metros="30">sur</ubicacion> 
+</zonas> 
