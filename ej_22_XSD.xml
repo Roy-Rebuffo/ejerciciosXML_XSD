@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<inventario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ej_22_XSD.xsd"> 
+  <producto sku="PROD-001"/> 
+ 	<producto sku="PROD-002"/>  
+</inventario>

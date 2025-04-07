@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<lista-tareas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ej_21_XSD.xsd"> 
+  <tarea completada="true"> 
+     <nombre>Reunión</nombre> 
+     <prioridad>alta</prioridad>
+      </tarea> 
+</lista-tareas>

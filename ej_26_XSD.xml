@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="ej_26_XSD.xsd">
+ <plato> 
+   <nombre>Pasta carbonara</nombre> 
+   <ingredientes> 
+     Pasta, queso, panceta, huevo. 
+   </ingredientes> 
+   Elaboración: 
+   <paso>Cocinar la pasta.</paso> 
+   <paso>Preparar la salsa con queso y panceta.</paso> 
+ </plato> 
+</menu> 
