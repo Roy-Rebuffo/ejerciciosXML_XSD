@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="horaTipo">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{2}:[0-9]{2}:[0-9]{2}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="codigoType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="ENV-[0-9]{3}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="estadoType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="E" />
+            <xs:enumeration value="T" />
+            <xs:enumeration value="R" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:attributeGroup name="identificadores">
+        <xs:attribute name="código" type="codigoType" />
+        <xs:attribute name="estado" type="estadoType" />
+    </xs:attributeGroup>
+
+
+    <xs:element name="logistica">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre"></xs:element>
+                <xs:element name="envíos" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="envío">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="diario" type="xs:string" />
+                                        <xs:element name="origen" type="xs:string"></xs:element>
+                                        <xs:element name="destino" type="xs:string"></xs:element>
+                                        <xs:element name="hora-salida" type="horaTipo"></xs:element>
+                                        <xs:element name="hora-llegada" type="horaTipo"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attributeGroup ref="identificadores" />
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="fecha">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="\d{4}-\d{2}-\d{2}" />
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

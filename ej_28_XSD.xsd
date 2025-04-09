@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="documentoTipo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="texto" />
+            <xs:enumeration value="imagen" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="documentoCompletoTipo">
+        <xs:sequence>
+            <xs:element name="texto" type="xs:string" />
+        </xs:sequence>
+        <xs:attribute name="tipo" type="tipoAtributo" use="required" />
+    </xs:complexType>
+
+    <xs:simpleType name="tipoAtributo">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="reporte" />
+            <xs:enumeration value="informe" />
+            <xs:enumeration value="resumen" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="documentos">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="documento" type="documentoCompletoTipo" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+</xs:schema>
