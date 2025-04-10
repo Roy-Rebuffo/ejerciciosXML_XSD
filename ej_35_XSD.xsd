@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="tipoIDUsuario">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="US-\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoIDColaborador">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="CL-\d{3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoCorreo">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[^@]+@[^@]+\.[a-zA-Z]{2,}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoDepartamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ventas"/>
+      <xs:enumeration value="soporte"/>
+      <xs:enumeration value="RRHH"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  
+  <xs:group name="datosPersona">
+    <xs:sequence>
+      <xs:element name="nombre-completo" type="xs:string"/>
+      <xs:element name="correo" type="tipoCorreo"/>
+    </xs:sequence>
+  </xs:group>
+
+  
+  <xs:attributeGroup name="horarios">
+    <xs:attribute name="fecha" type="xs:date" use="required"/>
+    <xs:attribute name="hora" type="xs:time" use="required"/>
+  </xs:attributeGroup>
+
+  
+  <xs:complexType name="tipoSesion">
+    <xs:simpleContent>
+      <xs:extension base="xs:positiveInteger">
+        <xs:attributeGroup ref="horarios"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+ 
+  <xs:complexType name="tipoSesiones">
+    <xs:sequence>
+      <xs:element name="sesión" type="tipoSesion" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+ 
+  <xs:element name="colaborador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="datosPersona"/>
+        <xs:element name="departamento">
+          <xs:complexType>
+            <xs:choice>
+              <xs:element name="ventas" type="xs:anyType"/>
+              <xs:element name="soporte" type="xs:anyType"/>
+              <xs:element name="RRHH" type="xs:anyType"/>
+            </xs:choice>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="sesiones" type="tipoSesiones"/>
+      </xs:sequence>
+      <xs:attribute name="identificador" type="tipoIDColaborador" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="usuario">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="datosPersona"/>
+        <xs:element name="sesiones" type="tipoSesiones"/>
+      </xs:sequence>
+      <xs:attribute name="identificador" type="tipoIDUsuario" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:element name="registro">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="usuario" maxOccurs="unbounded"/>
+        <xs:element ref="colaborador" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

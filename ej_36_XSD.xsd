@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:simpleType name="tipoTelefono">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="\d{9}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoCodigoReserva">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="RES-\d{3,4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoDuración">
+    <xs:restriction base="xs:positiveInteger">
+      <xs:minInclusive value="1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="hotel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="teléfono" type="tipoTelefono"/>
+        <xs:element name="dirección" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="reserva">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="fecha" type="xs:date"/>
+        <xs:element name="huésped" type="xs:string"/>
+        <xs:element name="días" type="tipoDuración"/>
+      </xs:all>
+      <xs:attribute name="código" type="tipoCodigoReserva" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="reservas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="hotel"/>
+        <xs:element ref="reserva" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
